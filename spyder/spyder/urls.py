@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('common.urls')),
     path('spyderadmin/', include('spyderadmin.urls')),
     path('customer/', include('customer.urls')),
+    path('reseller/', include('reseller.urls')),
 
 ]

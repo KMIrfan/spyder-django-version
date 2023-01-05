@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'common',
     'spyderadmin',
     'customer',
+    'reseller',
 ]
 
 MIDDLEWARE = [
