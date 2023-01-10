@@ -17,15 +17,18 @@
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 col-lg-9 col-xl-7">
           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <h5 align="center">{{ message }}</h5>
             <div class="card-body p-4 p-md-5">
               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Product Registration</h3>
-              <form>
-  
+              
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              
                 <div class="row">
                   <div class="col-md-6 mb-4">
   
                     <div class="form-outline">
-                      <input type="text" id="firstName" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                      <input type="text" name="protitle" id="firstName" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                       <label class="form-label" for="firstName">Product Title</label>
                     </div>
   
@@ -33,7 +36,7 @@
                   <div class="col-md-6 mb-4">
   
                     <div class="form-outline">
-                      <input type="text" id="lastName" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                      <input type="text" name="category" id="lastName" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                       <label class="form-label" for="lastName">Category</label>
                     </div>
   
@@ -44,7 +47,7 @@
                   <div class="col-md-6 mb-4 d-flex align-items-center">
   
                     <div class="form-outline datepicker w-100">
-                      <input type="text" class="form-control form-control-lg bg-sec rounded-4 border-0" id="birthdayDate" />
+                      <input type="text" name="proid" class="form-control form-control-lg bg-sec rounded-4 border-0" id="birthdayDate" />
                       <label for="birthdayDate" class="form-label">Product Id</label>
                     </div>
   
@@ -52,7 +55,7 @@
                   <div class="col-md-6 mb-4 d-flex align-items-center">
   
                     <div class="form-outline datepicker w-100">
-                      <input type="text" class="form-control form-control-lg bg-sec rounded-4 border-0" id="birthdayDate" />
+                      <input type="text" name="prosubtitle" class="form-control form-control-lg bg-sec rounded-4 border-0" id="birthdayDate" />
                       <label for="birthdayDate" class="form-label">Product Sub Tittle</label>
                     </div>
   
@@ -63,7 +66,7 @@
                                
                   <div class="row">
                     <div class="col-12">
-                      <input type="file" multiple id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                      <input type="file" name="proimg" multiple id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                       <label class="form-label" for="phoneNumber">Photo</label>
     
                     </div>
@@ -71,14 +74,14 @@
   
                 <div class="row">
                   <div class="col-12">
-                    <input type="text" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                    <input type="text" name="price" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                     <label class="form-label" for="phoneNumber">Price</label>
   
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <input type="Text" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                    <input type="Text" name="prodesc" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                     <label class="form-label" for="phoneNumber">Product Description</label>
   
                   </div>
@@ -87,10 +90,13 @@
                 <div class="mt-4 pt-2">
                   <input class="btn btn-big bg-lightdark rounded-5 text-light" type="submit" value="Submit" />
                 </div>
-  
+                
               </form>
+              
             </div>
+                    
           </div>
+          
         </div>
       </div>
     </div>

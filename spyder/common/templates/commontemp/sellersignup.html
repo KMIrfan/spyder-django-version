@@ -19,13 +19,13 @@
               <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Seller Registration</h3>
-                  <form>
-      
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <div class="row">
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="text" id="firstName" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <input type="text" id="firstName" name="fname" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                           <label class="form-label" for="firstName">First Name</label>
                         </div>
       
@@ -33,7 +33,7 @@
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="text" id="lastName" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <input type="text" id="lastName" name="lname" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                           <label class="form-label" for="lastName">Last Name</label>
                         </div>
       
@@ -44,7 +44,7 @@
                       <div class="col-md-12 mb-4 d-flex align-items-center">
       
                         <div class="form-outline datepicker w-100">
-                          <input type="text" class="form-control form-control-lg bg-sec rounded-4 border-0" id="birthdayDate" />
+                          <input type="text" name="bus" class="form-control form-control-lg bg-sec rounded-4 border-0" id="birthdayDate" />
                           <label for="birthdayDate" class="form-label">Business Name</label>
                         </div>
       
@@ -56,7 +56,7 @@
                       <div class="col-md-6 mb-4 pb-2">
       
                         <div class="form-outline">
-                          <input type="email" id="emailAddress" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <input type="email" id="emailAddress" name="email" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                           <label class="form-label" for="emailAddress">Email</label>
                         </div>
       
@@ -64,7 +64,7 @@
                       <div class="col-md-6 mb-4 pb-2">
       
                         <div class="form-outline">
-                          <input type="tel" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <input type="tel" id="phoneNumber" name="num" class="form-control form-control-lg bg-sec rounded-4 border-0" />
                           <label class="form-label" for="phoneNumber">Phone Number</label>
                         </div>
       
@@ -72,39 +72,36 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                          <input type="text" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
-                          <label class="form-label" for="phoneNumber">City where you are located</label>
+                          <input type="text" id="phoneNumber" name="bank" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <label class="form-label" for="phoneNumber">Bank Name</label>
         
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-12">
-                          <input type="text" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
-                          <label class="form-label" for="phoneNumber">List the product(s) you will be selling</label>
+                          <input type="text" id="phoneNumber" name="ac" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <label class="form-label" for="phoneNumber">Account Number</label>
+        
+                        </div>
+                      </div>  
+                      <div class="row">
+                        <div class="col-12">
+                          <input type="file" id="phoneNumber" name="sellerpic" class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                          <label class="form-label" for="phoneNumber">image</label>
         
                         </div>
                       </div>  
       
-                    <div class="row">
-                      <div class="col-12">
-                        <input type="password" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
-                        <label class="form-label" for="phoneNumber">Password</label>
-      
-                      </div>
+                    
                     </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <input type="password" id="phoneNumber" class="form-control form-control-lg bg-sec rounded-4 border-0" />
-                        <label class="form-label" for="phoneNumber">Confirm Password</label>
-      
-                      </div>
-                    </div>
-      
-                    <div class="mt-4 pt-2">
+                                       <div class="mt-4 pt-2">
                       <input class="btn btn-big bg-lightdark rounded-5 text-light" type="submit" value="Submit" />
                     </div>
+
+                    {{ message }}
       
                   </form>
+
                 </div>
               </div>
             </div>

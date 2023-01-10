@@ -27,27 +27,29 @@
                         <h3 class="mt-1 mb-5 pb-1">Seller Login</h3>
                       </div>
       
-                      <form>
+                      <form method="POST">
+                        {% csrf_token %}
                         <p class="plogin">Please login to your account</p>
       
                         <div class="form-outline mb-3">
-                          <input type="email" id="form2Example11" class="form-control bg-sec rounded-4 border-0"
+                          <input type="text" id="form2Example11" name="sellerid" class="form-control bg-sec rounded-4 border-0"
                             placeholder="Email or Mobile" />
                           
                         </div>
       
                         <div class="form-outline mb-4">
-                          <input type="password" id="form2Example22" class="form-control bg-sec rounded-4 border-0" 
+                          <input type="password" id="form2Example22" name="pwd" class="form-control bg-sec rounded-4 border-0" 
                           placeholder="Password"/>
                           
                         </div>
       
                         <div class="text-center pt-1 mb-5 pb-1">
-                          <a href="{% url 'reseller:index' %}"><button class="btn btn-big btn-block mb-3 bg-lightdark rounded-5 text-light" type="button">Log
-                            in</button></a>
+                          <button class="btn btn-big btn-block mb-3 bg-lightdark rounded-5 text-light" type="submit">Log
+                            in</button>
+                            {{ message }}
                           <a class="text-muted plogin" href="#!">Forgot password?</a>
                         </div>
-                      </form>
+                      
                     </div>
                   </div>
                   <div class="col-lg-6 d-flex align-items-center gradient-custom-2 justify-content-center">
@@ -55,6 +57,7 @@
                       <h3 class="mb-4 text-center">New Seller?</h3>
                       <p class="small mb-3 text-center">Sign Up or Create an account </p>
                       <a href="{% url 'common:sellersignup' %}"><button type="button" class="btn btn-md btn-big btn-light rounded-5 mt-4">Sign UP</button></a>
+                    </form>
                     </div>
                   </div>
                 </div>

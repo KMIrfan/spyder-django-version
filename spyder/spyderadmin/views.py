@@ -9,3 +9,5 @@ def spideradmin_viewseller(request):
     return render(request,'spideradmintemp/viewseller.html')
 def spideradmin_viewcustomer(request):
     return render(request,'spideradmintemp/viewcustomer.html')
+def spideradmin_login(request):
+    return render(request,'spideradmintemp/login.html')
