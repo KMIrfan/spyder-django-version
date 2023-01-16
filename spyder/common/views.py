@@ -3,10 +3,16 @@ from .models import cust,seller
 from random import randint
 from django.conf import settings
 from django.core.mail import send_mail
+from django.http import JsonResponse
+from reseller.models import product
 
 # Create your views here.
 def common_index(request):
-    return render(request,'commontemp/index.html')
+    pro = product.objects.all()
+    context = {
+        'product':pro
+    }
+    return render(request,'commontemp/index.html',context)
 def common_login(request):
     msg=''
     if request.method=='POST':
@@ -28,7 +34,7 @@ def common_sellerlogin(request):
         seller_id=request.POST['sellerid']
         seller_pwd=request.POST['pwd']
         try:
-            sell = seller.objects.get(seller_usr=seller_id,seller_pass=seller_pwd)
+            sell = seller.objects.get(seller_usr=seller_id,seller_pass=seller_pwd,status='Approved')
             request.session['seller'] = sell.id
             return redirect('reseller:index')
 
@@ -69,13 +75,46 @@ def common_sellersignup(request):
         new_sell=seller(seller_fname=fname,seller_lname=lname,seller_bus=bus,seller_email=email,seller_phn=num,seller_pass=pwd,bank=bank,seller_accnt=ac,seller_image=image,seller_usr=seller_usr )
         new_sell.save()
         msg = 'Created Successfully'
-        email_subject='Account User name and Password'
-        email_content='user name:'+ str(seller_usr) +'password: ' + pwd
+        # email_subject='Account User name and Password'
+        # email_content='user name:'+ str(seller_usr) +'password: ' + pwd
         
-        send_mail(
-            email_subject,
-            email_content,
-            settings.EMAIL_HOST_USER,
-            [email,]
-        )
+        # send_mail(
+        #     email_subject,
+        #     email_content,
+        #     settings.EMAIL_HOST_USER,
+        #     [email,]
+        # )
     return render(request,'commontemp/sellersignup.html', {'message':msg})
+
+def emailverification(request):
+    msg = ''
+    emailver = request.POST['demo']
+    
+    customer = cust.objects.filter(cust_email=emailver).exists()
+    if customer:
+        msg = '* Email is already exist'
+     
+    
+    context = {
+        'message':msg,
+        
+    }
+    return JsonResponse(context)
+
+def masterpage(request):
+    return render(request,'commontemp/masterpage.html')
+
+def selleremailverification(request):
+    msg = ''
+    emailver = request.POST['demo']
+    
+    customer = seller.objects.filter(seller_email=emailver).exists()
+    if customer:
+        msg='* Email is already exist'
+     
+    
+    context = {
+        'message':msg,
+        
+    }
+    return JsonResponse(context)

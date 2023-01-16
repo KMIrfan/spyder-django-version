@@ -9,4 +9,10 @@ urlpatterns = [
     path('profile', views.customer_profile, name='profile'),
     path('mycart', views.customer_mycart, name='mycart'),
     path('myorder', views.customer_myorder, name='myorder'),
+    path('update', views.customer_update, name='update'),
+    path('get_total', views.get_total, name='get_total'),
+    path('remove_cart/<int:cid>', views.remove_cart, name='remove_cart'),
+    path('logout', views.logout, name='logout'),
+    path('buy<int:pid>', views.buy, name='buy'),
+    
 ]

@@ -57,7 +57,7 @@
                       <a class="nav-link" href="#"><span class="text-secondary">Search</span><span class="sr-only">(current)</span></a>
                     </li>  
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><span class="text-secondary">Logout</span><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'spyderadmin:logout' %}"><span class="text-secondary">Logout</span><span class="sr-only">(current)</span></a>
                       </li>  
                     
                   </ul>
@@ -85,16 +85,16 @@
   <div class="container" >
     <div class="row">
       <!-- Card 1 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'spyderadmin:approveseller' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'spyderadmin:approveseller' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/2601778.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title font1">Approve Seller</h5>
-               </div>
+            </div>
           </div></a>
         </div>
         <!-- Card 2 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'spyderadmin:viewseller' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'spyderadmin:viewseller' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/sellerlogo.png' %}"  class="card-img-top" alt="...">
             <div class="card-body">
@@ -103,7 +103,7 @@
           </div></a>
         </div>
         <!-- Card 3 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'spyderadmin:viewcustomer' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'spyderadmin:viewcustomer' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/viewcust.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -112,19 +112,21 @@
           </div></a>
         </div>
         <!-- Card 4 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'common:login' %}" class="text-dark">
+        
+
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'common:login' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/vieworder.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title  font1">View Orders</h5>
-              </div>
+            </div>
           </div>
         </div></a>
         
-    </div>
+    
     <!-- Card 5 -->
-    <div class="row">
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
+    
+      <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
         <div class="card text-center">
           <img src="{% static 'images/recentupdate.png' %} " class="card-img-top" alt="...">
           <div class="card-body">
@@ -133,7 +135,7 @@
         </div></a>
       </div>
       <!-- Card 6 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
+      <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'spyderadmin:viewproducts' %}" class="text-dark">
         <div class="card text-center">
           <img src="{% static 'images/viewpro.png' %}" class="card-img-top" alt="...">
           <div class="card-body">
@@ -141,27 +143,34 @@
             </div>
         </div></a>
       </div>
-      <!-- Card 7 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
+      <!-- card 7 -->
+      <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'spyderadmin:removeseller' %}" class="text-dark">
         <div class="card text-center">
-          <img src="{% static 'images/vieworder.png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'images/recentupdate.png' %} " class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title  font1">Demo</h5>
+            <h5 class="card-title  font1">Remove Seller</h5>
             </div>
         </div></a>
       </div>
-      <!-- Card 8 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
+       <!-- card 8 -->
+       <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'spyderadmin:removecustomer' %}" class="text-dark">
         <div class="card text-center">
-          <img src="{% static 'images/2601778.png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'images/removecustomer.png' %} " height="90px" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title  font1">Demo</h5>
+            <h5 class="card-title  font1">Remove Customer</h5>
             </div>
         </div></a>
       </div>
-      
-  </div>
-  </div>  
+       <!-- card 7 -->
+       <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'spyderadmin:removeproduct' %}" class="text-dark">
+        <div class="card text-center">
+          <img src="{% static 'images/removeproduct.png' %} " height="90px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title  font1">Remove Product</h5>
+            </div>
+        </div></a>
+      </div>
+    </div>  
 </section>
 <!-- Footer -->
 <footer style="background-color: #060605;">

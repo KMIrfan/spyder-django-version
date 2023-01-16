@@ -110,112 +110,20 @@
       <!-- Card 1 -->
         <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'common:login' %}" class="text-dark">
           <div class="card text-center">
-            <img src="{% static 'images/301.png' %}" class="card-img-top" alt="...">
+            {% for i in product %}
+            <img src="{{ i.proimg.url }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title font1">D & G Sports Jacket</h5>
-              <p class="card-text  font2">Running Jacket</p>
+              <h5 class="card-title font1">{{i.protitle}}</h5>
+              <p class="card-text  font2">{{i.prosubtitle}}</p>
               <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.2</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
               <span style="color: #6f7376;">(2254)</span>
-              <p class="text-success font-weight-bold  "><ins>₹4200</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹6500</del>15% off</p>
+              <p class="text-success font-weight-bold  "><ins>{{i.price}}</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹6500</del>15% off</p>
             </div>
+            {% endfor %}
           </div></a>
         </div>
-        <!-- Card 2 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'common:login' %}" class="text-dark">
-          <div class="card text-center">
-            <img src="{% static 'images/311.png' %}"  class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title  font1">Motor Sport Jacket</h5>
-              <p class="card-text  font2">Motor Cycling Jacket</p>
-              <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.0</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-              <span style="color: #6f7376;">(5402)</span>
-              <p class="text-success font-weight-bold "><ins>₹3140</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹4000</del>18% off</p>
-            </div>
-          </div></a>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'common:login' %}" class="text-dark">
-          <div class="card text-center">
-            <img src="{% static 'images/302.png' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title  font1">Triumph Jacket </h5>
-              <p class="card-text  font2">Running Jacket</p>
-              <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.5</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-              <span style="color: #6f7376;">(3054)</span>
-              <p class="text-success font-weight-bold "><ins>₹2200</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹4500</del>22% off</p>
-            </div>
-          </div></a>
-        </div>
-        <!-- Card 4 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'common:login' %}" class="text-dark">
-          <div class="card text-center">
-            <img src="{% static 'images/304.png' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title  font1">Puma Sports Jacket</h5>
-              <p class="card-text  font2">Sports Jacket</p>
-              <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>3.8</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-              <span style="color: #6f7376;">(14254)</span>
-              <p class="text-success font-weight-bold "><ins>₹1400</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹2000</del>8 % off</p>
-            </div>
-          </div>
-        </div></a>
-        
-    </div>
-    <!-- Card 5 -->
-    <div class="row">
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
-        <div class="card text-center">
-          <img src="{% static 'images/303.png' %} " class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title  font1">Y & B Mens Sports Jacket</h5>
-            <p class="card-text  font2">GYM Jacket</p>
-            <button class="btn btn-success pl-1 pt-0 " style="width: 40px; height: 30px;"><small>4.5</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-            <span style="color: #6f7376;">(10254)</span>
-            <p class="text-success font-weight-bold "><ins>₹4780</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹6400</del>16% off</p>
-          </div>
-        </div></a>
       </div>
-      <!-- Card 6 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
-        <div class="card text-center">
-          <img src="{% static 'images/308.png' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title  font1">Adidas Sports Jacket</h5>
-            <p class="card-text  font2">Cycling Jacket</p>
-            <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.5</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-            <span style="color: #6f7376;">(10254)</span>
-            <p class="text-success font-weight-bold "><ins>₹7280</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹13500</del>29% off</p>
-          </div>
-        </div></a>
       </div>
-      <!-- Card 7 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
-        <div class="card text-center">
-          <img src="{% static 'images/310.png' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title  font1">File Sports Wear</h5>
-            <p class="card-text  font2">Cricket Jacket</p>
-            <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.5</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-            <span style="color: #6f7376;">(10254)</span>
-            <p class="text-success font-weight-bold "><ins>₹8400</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹9800</del>24% off</p>
-          </div>
-        </div></a>
-      </div>
-      <!-- Card 8 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
-        <div class="card text-center">
-          <img src="{% static 'images/307.png' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title  font1">Wildcraft Cotton Jacket</h5>
-            <p class="card-text font2">Winter Jacket</p>
-            <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.5</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
-            <span style="color: #6f7376;">(8254)</span>
-            <p class="text-success font-weight-bold "><ins>₹6870</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹9800</del>18% off</p>
-          </div>
-        </div></a>
-      </div>
-      
-  </div>
   </div>  
 </section>
 <!-- Footer -->

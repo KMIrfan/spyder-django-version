@@ -59,7 +59,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="{% url 'reseller:profile' %}">Profile</a>
                           <a class="dropdown-item" href="{% url 'reseller:changepassword' %}">Change Password</a>
-                          <a class="dropdown-item" href="">Logout</a>
+                          <a class="dropdown-item" href="{% url 'reseller:logout' %}">Logout</a>
                     </li>
                     <li class="nav-item active">
                       <a class="nav-link" href="#"><span class="text-secondary">Search</span><span class="sr-only">(current)</span></a>
@@ -90,7 +90,7 @@
   <div class="container" >
     <div class="row">
       <!-- Card 1 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'reseller:productcatelogue' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'reseller:productcatelogue' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/procat.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -99,7 +99,7 @@
           </div></a>
         </div>
         <!-- Card 2 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'reseller:addproduct' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'reseller:addproduct' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/addpro.png' %}"  class="card-img-top" alt="...">
             <div class="card-body">
@@ -108,7 +108,7 @@
           </div></a>
         </div>
         <!-- Card 3 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'reseller:updatestock' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'reseller:updatestock' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/recentupdate.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -117,7 +117,7 @@
           </div></a>
         </div>
         <!-- Card 4 -->
-        <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'reseller:recentorders' %}" class="text-dark">
+        <div class="col-12 col-md-2 col-sm-6 pt-3"><a href="{% url 'reseller:recentorders' %}" class="text-dark">
           <div class="card text-center">
             <img src="{% static 'images/vieworder.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -126,10 +126,10 @@
           </div>
         </div></a>
         
-    </div>
+    
     <!-- Card 5 -->
-    <div class="row">
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
+    
+      <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
         <div class="card text-center">
           <img src="{% static 'images/recentupdate.png' %} " class="card-img-top" alt="...">
           <div class="card-body">
@@ -138,7 +138,7 @@
         </div></a>
       </div>
       <!-- Card 6 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
+      <div class="col-12 col-md-2 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
         <div class="card text-center">
           <img src="{% static 'images/orderhist.png' %}" class="card-img-top" alt="...">
           <div class="card-body">
@@ -146,24 +146,7 @@
             </div>
         </div></a>
       </div>
-      <!-- Card 7 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
-        <div class="card text-center">
-          <img src="{% static 'images/viewcust.png' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title  font1">Demo</h5>
-            </div>
-        </div></a>
-      </div>
-      <!-- Card 8 -->
-      <div class="col-12 col-md-3 col-sm-6 pt-3 pb-3"><a href="{% url 'common:login' %}" class="text-dark">
-        <div class="card text-center">
-          <img src="{% static 'images/sellerlogo.png' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title  font1">Demo</h5>
-            </div>
-        </div></a>
-      </div>
+     
       
   </div>
   </div>  

@@ -62,7 +62,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="{% url 'customer:profile' %}">Profile</a>
                           <a class="dropdown-item" href="{% url 'customer:changepassword' %}">Change Password</a>
-                          <a class="dropdown-item" href="">Logout</a>
+                          <a class="dropdown-item" href="{% url 'customer:logout' %}">Logout</a>
                     </li>
                     <li class="nav-item active">
                       <a class="nav-link" href="#"><span class="text-secondary">Search</span><span class="sr-only">(current)</span></a>
@@ -128,8 +128,7 @@
           </div></a>
         </div>
         {% endfor %}
-      
-  </div>
+    </div>
   </div>  
 </section>
 <!-- Footer -->

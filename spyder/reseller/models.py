@@ -11,6 +11,7 @@ class product(models.Model):
     proimg=models.ImageField(upload_to='product/')
     price=models.IntegerField()
     prodesc=models.CharField(max_length=100)
+    stock=models.IntegerField(default='1')
 
 
     class Meta:

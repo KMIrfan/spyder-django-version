@@ -26,6 +26,7 @@ class seller(models.Model):
     bank=models.CharField(max_length=40)
     seller_accnt=models.BigIntegerField()
     seller_image=models.ImageField(upload_to='seller/')
+    status = models.CharField(max_length=20,default='pending')
 
     class Meta:
         db_table = 'seller'

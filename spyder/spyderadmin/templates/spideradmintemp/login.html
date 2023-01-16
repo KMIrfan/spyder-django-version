@@ -27,23 +27,24 @@
                         <h3 class="mt-1 mb-5 pb-1">Login to Admin Panel</h3>
                       </div>
       
-                      <form>
+                      <form method="POST">
+                        {% csrf_token %}
                         <p class="plogin">Please login to your account</p>
       
                         <div class="form-outline mb-3">
-                          <input type="email" id="form2Example11" class="form-control bg-sec rounded-4 border-0"
-                            placeholder="Email or Mobile" />
+                          <input name="usrname" type="text" id="form2Example11" class="form-control bg-sec rounded-4 border-0"
+                            placeholder="user name" />
                           
                         </div>
       
                         <div class="form-outline mb-4">
-                          <input type="password" id="form2Example22" class="form-control bg-sec rounded-4 border-0" 
+                          <input type="password" name="pwd" id="form2Example22" class="form-control bg-sec rounded-4 border-0" 
                           placeholder="Password"/>
                           
                         </div>
       
                         <div class="text-center pt-1 mb-5 pb-1">
-                          <a href="{% url 'spyderadmin:index' %}"><button class="btn btn-big btn-block mb-3 bg-lightdark rounded-5 text-light" type="button">Log
+                          <a href=""><button class="btn btn-big btn-block mb-3 bg-lightdark rounded-5 text-light" type="submit">Log
                             in</button></a>
                           <a class="text-muted plogin" href="#!">Forgot password?</a>
                         </div>

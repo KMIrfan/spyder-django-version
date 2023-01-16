@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spyder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+</head>
+<body>
+  
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Remove Product</h3>
+              <form method="POST">
+                {% csrf_token %}
+                
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                     
+                        <select name="select" class="form-select btn-big bg-sec border-0 rounded" style="height: 45px;" aria-label="Default select example">
+                            <option selected disabled>Select Seller Id</option>
+                          {% for i in remove %}
+                            <option value="{{ i.id }}">{{ i.id }}</option>
+                          {% endfor %}
+                          </select>
+                          <label for="birthdayDate" class="form-label">Seller Id</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                        <input type="text" id="cname" class="form-control form-control-lg bg-sec rounded-4 border-0">
+                        <label for="birthdayDate" class="form-label">Seller Name</label>
+                    </div>
+  
+                  </div>
+                </div>
+                </div>
+                <div class="mt-4 pt-2">
+                  
+                  <button class="btn btn-big bg-lightdark rounded-5 text-light" type="submit">Remove</button>
+                  <a href="{% url 'spyderadmin:index' %}"  class="btn bg-lightdark rounded-5 text-light">Back</a>
+                  {{ message }}
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+      
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+ $(document).ready(function(){
+    $.ajaxSetup({
+      headers:{
+        "X-CSRFToken":'{{ csrf_token }}'
+      }
+    })
+    $('select').change(function(){
+      let pno = $(this).val()
+      
+      
+      $.ajax({
+        url : "{% url 'spyderadmin:removesell' %}",
+        data : {
+          'id' : pno 
+        },
+        method : 'POST',
+        success : function(response){
+          $('#cname').val(response.remove)
+          
+        }
+      })
+    })
+})
+  
+</script>  
+</body>
+  </html>

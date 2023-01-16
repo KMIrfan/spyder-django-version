@@ -62,7 +62,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="{% url 'customer:profile' %}">Profile</a>
                           <a class="dropdown-item" href="{% url 'customer:changepassword' %}">Change Password</a>
-                          <a class="dropdown-item" href="">Logout</a>
+                          <a class="dropdown-item" href="{% url 'reseller:logout' %}">Logout</a>
                     </li>
                     <li class="nav-item active">
                       <a class="nav-link" href="#"><span class="text-secondary">Search</span><span class="sr-only">(current)</span></a>
@@ -113,7 +113,7 @@
   <div class="container" >
     <div class="row">
       {% for i in product %}
-      <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="{% url 'customer:productdetails' %}" class="text-dark">
+      <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="" class="text-dark">
         <div class="card text-center">
           <img src="{{ i.proimg.url }}" class="card-img-top" alt="...">
           <div class="card-body">

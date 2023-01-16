@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spyder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+</head>
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Customer Registration</h3>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+      
+                        <div class="form-outline">
+                          <input type="text" value="{{ sell.cust_fname }}" id="firstName" name="fname" class="form-control form-control-lg" />
+                          <label class="form-label" for="firstName">First Name</label>
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4">
+      
+                        <div class="form-outline">
+                          <input type="text" value="{{ sell.cust_lname }}" id="lastName" name="lname" class="form-control form-control-lg" />
+                          <label class="form-label" for="lastName">Last Name</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      
+                      <div class="col-md-6 mb-4">
+      
+                        <h6 class="mb-2 pb-1">Gender: </h6>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                            value="Female" />
+                          <label class="form-check-label" for="femaleGender">Female</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                            value="Male"  checked/>
+                          <label class="form-check-label" for="maleGender">Male</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" id="otherGender"
+                            value="Other" />
+                          <label class="form-check-label" for="otherGender">Other</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+      
+                        <div class="form-outline">
+                          <input type="email" value="{{ sell.cust_email }}" id="emailAddress" name="email" class="form-control form-control-lg" />
+                          <label class="form-label" for="emailAddress">Email</label>
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+      
+                        <div class="form-outline">
+                          <input type="tel" value="{{ sell.cust_phn }}" id="phoneNumber" name="num" class="form-control form-control-lg" />
+                          <label class="form-label" for="phoneNumber">Phone Number</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    
+      
+                    <div class="mt-4 pt-2">
+                      <input class="btn btn-primary btn-lg" type="submit" value="Update" />
+                    </div>
+      
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </html>
