@@ -132,3 +132,7 @@ def rejectseller(request,sid):
     sell = seller.objects.filter(id = sid).update(status = 'Rejected')
     
     return redirect('spyderadmin:approveseller')
+def masterpage(request):
+    
+    
+    return render(request,'spideradmintemp/masterpage.html')

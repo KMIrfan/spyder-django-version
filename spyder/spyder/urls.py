@@ -24,5 +24,6 @@ urlpatterns = [
     path('spyderadmin/', include('spyderadmin.urls')),
     path('customer/', include('customer.urls')),
     path('reseller/', include('reseller.urls')),
+    path('spyderapi/', include('spyderapi.urls')),
 
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -18,6 +18,7 @@ urlpatterns = [
     path('removesell', views.removesell, name='removesell'),
     path('approveseller/<int:sid>', views.approveseller, name='approveseller'),
     path('rejectseller/<int:sid>', views.rejectseller, name='rejectseller'),
+    path('masterpage', views.masterpage, name='masterpage'),
 
 
     

@@ -16,7 +16,6 @@ def common_index(request):
 def common_login(request):
     msg=''
     if request.method=='POST':
-        
         cust_id=request.POST['custid']
         cust_pwd=request.POST['pwd']
         try:
@@ -41,9 +40,6 @@ def common_sellerlogin(request):
         except Exception as e:
             print (e)
             msg="invalid credentials"
-
-        
-   
     return render(request,'commontemp/sellerlogin.html',{'message':msg})
     
 def common_customersignup(request):
@@ -55,10 +51,16 @@ def common_customersignup(request):
         num=request.POST['num']
         pwd=request.POST['pwd']
         cpwd=request.POST['cpwd']
-        new_cust=cust(cust_fname=fname,cust_lname=lname,gender=gender,cust_email=email,cust_phn=num,cust_pass=pwd,cust_cnfrmpass=cpwd)
+        house=request.POST['house']
+        pin=request.POST['pin']
+        post=request.POST['post']
+        landmark=request.POST['landmark']
+        dist=request.POST['dist']
+        state=request.POST['state']
+        new_cust=cust(cust_fname=fname,cust_lname=lname,gender=gender,cust_email=email,cust_phn=num,cust_pass=pwd,cust_cnfrmpass=cpwd,state=state,dist=dist,pin=pin,post=post,house=house,landmark=landmark)
         new_cust.save()
-
     return render(request,'commontemp/customersignup.html')
+
 def common_sellersignup(request):
     msg=''
     if request.method=='POST':
@@ -89,15 +91,11 @@ def common_sellersignup(request):
 def emailverification(request):
     msg = ''
     emailver = request.POST['demo']
-    
     customer = cust.objects.filter(cust_email=emailver).exists()
     if customer:
         msg = '* Email is already exist'
-     
-    
     context = {
         'message':msg,
-        
     }
     return JsonResponse(context)
 
@@ -107,14 +105,10 @@ def masterpage(request):
 def selleremailverification(request):
     msg = ''
     emailver = request.POST['demo']
-    
     customer = seller.objects.filter(seller_email=emailver).exists()
     if customer:
         msg='* Email is already exist'
-     
-    
     context = {
         'message':msg,
-        
     }
     return JsonResponse(context)

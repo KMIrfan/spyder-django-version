@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'spyderadmin',
     'customer',
     'reseller',
+    'rest_framework',
+    'spyderapi',
+    
 ]
 
 MIDDLEWARE = [

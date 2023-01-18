@@ -146,5 +146,10 @@ def buy(request,pid):
         'cart':my_cart
     }
     return render(request,'customertemp/buy.html',context)
+def masterpage(request):
+    
+    
+    return render(request,'customertemp/masterpage.html')
+
     
 

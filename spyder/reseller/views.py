@@ -158,6 +158,10 @@ def logout(request):
     del request.session['seller']
     request.session.flush()
     return redirect('common:index')
+
+def masterpage(request):
+    
+    return render(request,'resellertemp/masterpage.html')
     
 
 

@@ -10,6 +10,13 @@ class cust(models.Model):
     cust_phn=models.BigIntegerField()
     cust_pass=models.CharField(max_length=40)
     cust_cnfrmpass=models.CharField(max_length=40)
+    house=models.CharField(max_length=40,default='select')
+    post=models.CharField(max_length=40,default='select')
+    landmark=models.CharField(max_length=40,default='select')
+    dist=models.CharField(max_length=40,default='malappuram')
+    state=models.CharField(max_length=40,default='kerala')
+    pin=models.BigIntegerField(default=671631)
+
 
     class Meta:
         db_table = 'customer'
