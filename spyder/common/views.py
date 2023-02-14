@@ -5,9 +5,20 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from reseller.models import product
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+import logging
+from django.http import HttpResponse
 
 # Create your views here.
+logger = logging.getLogger('django')
+
+def info (request) :
+    logger.info("this is info message") 
+    return HttpResponse ("info")
+
 def common_index(request):
+    logger.info("this is info message") 
     pro = product.objects.all()
     context = {
         'product':pro
@@ -112,3 +123,13 @@ def selleremailverification(request):
         'message':msg,
     }
     return JsonResponse(context)
+@api_view(['GET'])
+def index(request):
+    return Response('Congratulations, you have created an API')
+
+@api_view(['GET'])
+def floattest(request):
+    a = 4.5
+    print (a)
+    return Response(float)
+

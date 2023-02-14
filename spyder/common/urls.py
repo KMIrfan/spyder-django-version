@@ -11,6 +11,8 @@ urlpatterns = [
     path('emailverification', views.emailverification, name='emailverification'),
     path('masterpage', views.masterpage, name='masterpage'),
     path('selleremailverification', views.selleremailverification, name='selleremailverification'),
+    path('index', views.index, name='testindex'),
+    path('floattest', views.floattest, name='floattest'),
     
 
 
